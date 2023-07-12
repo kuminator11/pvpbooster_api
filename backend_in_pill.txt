@@ -1,0 +1,50 @@
+CONNECTION.PHP
+status - return status:'on going', version:'1.0'
+
+DC_USER.PHP
+check_username - return 'user extist, user doesnt exist' (username)
+check_user - return status:'success/error' (username, discord_id)
+get_id - return status:'success/error/user doesnt exist', discord_id:'ID' (username)
+insert_user(or update) - return status:'success/error' (username, discord_id)
+delete_user - return status:'success/error/user doesnt exist' (username)
+reset_hwid - return status:'success/error/already_empty/user doesnt exist/incorrect_id' (username, discord_id)
+
+DOWNLOAD.PHP
+download_client - return .exe file
+
+KEYS.PHP
+keyExists - return 'found/not found' (license_key)
+deleteKey - return status:'success/error/key was not found' (license_key)
+assertKey - return status:'success/error/key already exists' (license_key, key_type, key_durability)
+
+LOGIN.PHP
+check_hwid - return status:'success/banned' (hwid)
+check_data - return status:'success/user doesnt exist/empty hwid slot/expired license/incorrect data' (username, password, hwid)
+update_hwid - return status:'success/error' (username, hwid)
+
+MINER.PHP
+update_status - return 'success/error' ( status(start,stop,exit) , username)
+update_activity - return status:'success/error' (queue, username)
+send_activities - return status:'success/error' ( mode(start,stop,delete OR insert) , username)
+get_activities - return status:'success/error' (username)
+shutdow_ping - return status:'success/error' (username)
+
+ONLINE.PHP
+set_online - return status:'success/error' (username)
+delete_online - return status:'success/error' (username)
+get_online - return status:'success/error'
+
+SECURITY.PHP
+encode - return encoded string
+decode - return decoded string
+
+SIGNUP.PHP
+sign_up - return status:'success/error/key was not found/user exist' (personal_id, email, nickname, password, hwid, hwid_status, license_key, registration_date)
+check_hwid - return status:'success/banned' (hwid)
+
+STATYSTYKI.PHP
+update_stats - return status:'success/error' ( stats(zdobyte_kille,wykopany_kamien,zarobione_pieniadze,przebyte_kratki) , value, username)
+create_stats - return status:'success/error' (username)
+reset_stats - return status:'success/error'
+delete_user - return status:'success/error' (username)
+return_top_data - return highest users stats (wykopany_kamien) TOP 10
